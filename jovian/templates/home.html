@@ -6,18 +6,35 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Jovian</title>
 
+    <style>
+        #banner {
+        height: 360px;
+        width: 100%;
+        object-fit:cover;
+        margin-bottom:16px;
+    }
+    </style>
+
+
 </head>
 <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
     <div class="container">
     <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-    <img class="img-fluid" id="banner" src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-    <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+    <div class="row" style = "margin-bottom:16px">
+        <div class="col-md-6">
     <p class ="lead">We use some essential cookies to make this website work.
 
     We’d like to set additional cookies to understand how you use GOV.UK, remember your settings and improve government services.
 
     We also use cookies set by other sites to help us deliver content from their services.
     </p>
+        </div>
+    <div class="d-none d-md-block col-md-6">
+     <img src="/static/people.jpg" style="height:320px;border-radius:4px">
+    </div>
+    </div>
     <h2 class="text-center mt-2 mb-4">Open Positions</h2>
         <div>
             {% for job in jobs %}
@@ -26,10 +43,13 @@
         </div>
 
     <div class="text-center">
-    <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class ="mt-4">Copyright 2022,Jovian</p>
+    <a  class="btn btn-primary btn-lg" href="mailto:hello @jovian.ai?subject=Questions%20about%20job%20openings&body=My%20name%3A%3Cyour%20name%20here%3E%0D%0AMy%20questions%3A%3Center%20questions%20here%3E%0D%0A">
+        Contact Us</a>
+
     </div>
     </div>
+
+    {% include 'footer.html' %}
 </body>
 
 
